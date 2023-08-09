@@ -98,16 +98,20 @@
                     }
     </script> -->
    <script>
-     document.getElementById("role").addEventListener("change", function() {
+  document.getElementById("role").addEventListener("change", function() {
   var selectedValue = this.value;
   var otherRoleInput = document.getElementById("otherRoleInput");
+  var otherRoleField = document.getElementById("otherRole");
 
   if (selectedValue === "Other") {
     otherRoleInput.style.display = "block";
+    otherRoleField.value = ""; // Clear the input when "Other" is selected
   } else {
     otherRoleInput.style.display = "none";
+    otherRoleField.value = selectedValue; // Set the value to the selected role
   }
 });
+
 
    </script> 
   </body>
