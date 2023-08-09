@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Code Alpha Survey Form </title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+      <div class="main-block">
+          <form action="mailto:klaykalil@gmail.com" method="post" enctype="text/plain">
+              <h1>Code Alpha Survey Form</h1>
+              <h4>Please enter your e-mail</h4>
+              <input id="email" type="email" name="user_email" required >
+              <h4>Name</h4>
+              <input type="text" id="name" >
+              <h4>Age (optional)</h4>
+              <input type="number" id="age" >
+              <h4>Which option best describes your current role ?</h4>
+              <select id="role">
+                  <option>Student</option>
+                  <option>Intern</option>
+                  <option>Junior/Associate </option>
+                  <option>Senior/Manager </option>
+                  <option>Entrepreneur </option>
+                  <option>Freelancer </option>
+                  <option>Other </option>
+              </select>
+              <div id="otherRoleInput" style="display: none;">
+                <label for="otherRole">Please specify:</label>
+                <input type="text" id="otherRole" name="otherRole">
+              </div>
+              <br> 
+              <div class="questions">
+                <br>
+                  <h4>Would you recommend Code Alpha to your friends ?</h4>
+                  <label >
+                    <input type="radio" value="sure" name="Do_you_recommend" id="Do_you_recommend">Sure!
+                 
+                
+                    <input type="radio" value="maybe" name="Do_you_recommend" id="Do_you_recommend">Maybe
+                  
+
+                    <input type="radio" value="not_sure" name="Do_you_recommend" id="Do_you_recommend">Not sure
+                  </label>
+   
+              </div>
+
+
+         
+      </div>
+      <div class="choices">
+        <br>
+          <h4>What would you like to see improved ?</h4>
+              <input type="checkbox" name="improved " value="app_dev" id="improve">App development intership</checkbox>
+              <br>
+              <input type="checkbox" name="improved " value="cloud_computing" id="improve">Cloud computing intership</checkbox>
+              <br>
+              <input type="checkbox" name="improved " value="graphics_designing" id="improve">Graphics designing intership</checkbox>
+              <br>
+              <input type="checkbox" name="improved " value="java" id="improve">Java intership</checkbox>
+              <br>
+              <input type="checkbox" name="improved " value="python" id="improve">Python intership</checkbox>
+              <br>
+              <input type="checkbox" name="improved " value="web_dev" id="improve">Web development intership</checkbox>
+              <br>
+
+      </div>
+      <div class="comments">
+          <h4>
+              Do you have more comments ?
+          </h4>
+          <input type="text" name="comment" id="comment">
+          <br>
+
+      </div>
+      <div class="center">
+          <button type="submit" href="/">Send</button>
+      </div>
+    </form>
+   <!---- <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script>
+        function sendEmail(){
+            Email.send({
+                Host: "smtp.gmail.com",
+                Username:"klaykalil@gmail.com",
+                Password:"f235b3b6-b9e6-4575-ab08-6df75bbbb9f6"
+                To : 'klaykalil@gmail.com',
+                From : document.getElementById("email").value ,
+                Subject : "New contact form enquiry",
+                Body : "email: "+document.getElementById("email").value + "<br> Name: " + document.getElementById("name").value
+                + "<br> Age: " + document.getElementById("age").value + + "<br> Role: " + document.getElementById("role").value
+                + "<br> Recommend: " + document.getElementById("recommend").value
+                + "<br> Improve: " + document.getElementById("improve").value
+                + "<br> Comment: " + document.getElementById("comment").value
+            }).then(
+            message => alert("message sent successfully" )
+            );
+                    }
+    </script> -->
+   <script>
+     document.getElementById("role").addEventListener("change", function() {
+  var selectedValue = this.value;
+  var otherRoleInput = document.getElementById("otherRoleInput");
+
+  if (selectedValue === "Other") {
+    otherRoleInput.style.display = "block";
+  } else {
+    otherRoleInput.style.display = "none";
+  }
+});
+
+   </script> 
+  </body>
+</html>
